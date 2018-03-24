@@ -1,0 +1,11 @@
+{
+  "name": "nice-try-train",
+  "version": "0.0.1",
+  "title": "Nice Try, Train",
+  "author": "cdaringe",
+  "contact": "",
+  "homepage": "",
+  "factorio_version": "0.16",
+  "dependencies": ["base >= 0.16"],
+  "description": "Prevents getting hit by jerk trains."
+}

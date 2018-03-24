@@ -1,0 +1,16 @@
+{
+  "name": "nice-try-train",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "chokidar-cli": "^1.2.0",
+    "nodemon": "^1.14.12",
+    "npm-run-all": "^4.1.2"
+  },
+  "scripts": {
+    "copy": "rsync -r --exclude node_modules $PWD/ ~/Library/Application\\ Support/factorio/mods/nice-try-train_0.0.1/",
+    "watch": "chokidar '**/*.lua' '**/*.json' -c 'npm run copy'"
+  },
+  "dependencies": {}
+}
