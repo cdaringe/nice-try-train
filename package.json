@@ -10,7 +10,10 @@
   },
   "scripts": {
     "copy": "rsync -r --exclude node_modules $PWD/ ~/Library/Application\\ Support/factorio/mods/nice-try-train_0.0.1/",
-    "watch": "chokidar '**/*.lua' '**/*.json' -c 'npm run copy'"
+    "watch": "chokidar '**/*.lua' '**/*.json' -c 'npm run copy'",
+    "prerelease": "rm -rf build && mkdir build",
+    "rel:bundle": "VERSION=$(cat package.json | jq -r .version) && zip -r build/nice-try-train-$VERSION.zip control.lua info.json",
+    "release": "run-s rel:bundle"
   },
   "dependencies": {}
 }
