@@ -14,7 +14,7 @@
     "deploy": "run-s clean:install copy:install",
     "watch": "chokidar '**/*.lua' '**/*.json' -c 'npm run deploy'",
     "prerelease": "rm -rf build && mkdir build",
-    "rel:bundle": "VERSION=$(cat package.json | jq -r .version) && zip -r build/nice-try-train-$VERSION.zip control.lua info.json",
+    "rel:bundle": "VERSION=$(cat package.json | jq -r .version) && zip -r build/nice-try-train_$VERSION.zip control.lua info.json",
     "release": "run-s rel:bundle"
   },
   "dependencies": {}
