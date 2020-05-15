@@ -1,11 +1,11 @@
 {
   "name": "nice-try-train",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "title": "Nice Try, Train",
   "author": "cdaringe",
   "contact": "",
   "homepage": "",
-  "factorio_version": "0.17",
+  "factorio_version": "0.18",
   "dependencies": ["base >= 0.17"],
   "description": "Prevents death by [jerk] trains."
 }
