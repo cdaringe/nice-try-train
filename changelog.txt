@@ -1,0 +1,5 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+Date: 2020.05.22
+  Features:
+    - Changed the logic determining train death. Now trains of forces other than your own are dangerous    
