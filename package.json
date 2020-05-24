@@ -9,12 +9,12 @@
     "npm-run-all": "^4.1.2"
   },
   "scripts": {
-    "clean:install": "rm -rf ~/Library/Application\\ Support/factorio/mods/nice-try-train_1.1.0/",
-    "copy:install": "rsync -r --exclude node_modules $PWD/ ~/Library/Application\\ Support/factorio/mods/nice-try-train_1.1.0/",
-    "deploy": "run-s clean:install copy:install",
-    "watch": "chokidar '**/*.lua' '**/*.json' -c 'npm run deploy'",
+    "clean:install": "rm -rf /mnt/c/Users/Nathan/AppData/Roaming/Factorio/mods/nice-try-train*",
+    "copy:install": "VERSION=$(cat info.json | jq -r .version) && rsync -r --exclude node_modules --exclude '.git*' --exclude build --exclude 'npm*' --exclude README.md --exclude package.json --exclude '*.lock'  ./ /mnt/c/Users/Nathan/AppData/Roaming/Factorio/mods/nice-try-train_$VERSION/",
+    "install": "run-s clean:install copy:install",
+    "watch": "chokidar 'locale/**/*.cfg' '**/*.lua' '**/*.json' -c 'npm run install'",
     "prerelease": "rm -rf build && mkdir build",
-    "rel:bundle": "VERSION=$(cat package.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp changelog.txt control.lua info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
+    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp changelog.txt control.lua info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
     "release": "run-s rel:bundle"
   },
   "dependencies": {}
