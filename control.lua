@@ -1,5 +1,5 @@
 function on_pre_death(evt)
-    if evt.cause.train ~= nil then
+    if evt.cause ~= nil and evt.cause.train ~= nil then
         setting = settings.global["nice-try-train-friendly-setting"]
         player = game.players[evt.player_index]
         player_force = player.force
