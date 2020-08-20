@@ -14,7 +14,7 @@
     "install": "run-s clean:install copy:install",
     "watch": "chokidar 'locale/**/*.cfg' '**/*.lua' '**/*.json' -c 'npm run install'",
     "prerelease": "rm -rf build && mkdir build",
-    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp changelog.txt control.lua info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
+    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
     "release": "run-s rel:bundle"
   },
   "dependencies": {}
