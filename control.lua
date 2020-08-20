@@ -4,7 +4,6 @@ function on_pre_death(evt)
         player = game.players[evt.player_index]
         player_force = player.force
         train_force = evt.cause.force
-        player.print("setting: " .. setting .. "\nplayer: " .. player.name .. "\nplayer_force: " .. player_force.index .. "\ntrain_force: " .. train_force.index)
         if setting == "my-trains" and player_force.index == train_force.index then
             player.character.health = 1
         elseif setting == "all-trains" then
