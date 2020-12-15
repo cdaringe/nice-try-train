@@ -16,3 +16,9 @@ Version: 1.4.0
 Date: 2020.08.14
   Features:
     - Added a setting to change which train's won't kill you (only your trains, all trains, or trains that you can control, defaults to only your trains)
+
+---------------------------------------------------------------------------------------------------
+Version: 1.4.4
+Date: 2020.12.15
+  Features:
+    - Updated for Factorio 1.1
