@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "chokidar-cli": "^1.2.0",
+    "chokidar-cli": "^2.1.0",
     "nodemon": "^1.14.12",
     "npm-run-all": "^4.1.2"
   },
@@ -16,6 +16,5 @@
     "prerelease": "rm -rf build && mkdir build",
     "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
     "release": "run-s rel:bundle"
-  },
-  "dependencies": {}
+  }
 }
