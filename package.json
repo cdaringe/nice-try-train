@@ -1,6 +1,6 @@
 {
   "name": "nice-try-train",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
@@ -16,7 +16,7 @@
     "deploy": "run-s deploy:clean deploy:copy",
     "format": "lua-format -i *.lua",
     "prerelease": "rm -rf build && mkdir build",
-    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
+    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r thumbnail.png changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
     "release": "run-s rel:bundle",
     "watch": "chokidar 'locale/**/*.cfg' '**/*.lua' '**/*.json' -c 'npm run deploy'"
   }
