@@ -15,7 +15,6 @@
     "deploy:copy": "node scripts/install.js",
     "deploy": "run-s deploy:clean deploy:copy",
     "format": "lua-format -i *.lua",
-    "install": "run-s clean:install copy:install",
     "prerelease": "rm -rf build && mkdir build",
     "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
     "release": "run-s rel:bundle",
