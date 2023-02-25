@@ -7,5 +7,5 @@
   "homepage": "",
   "factorio_version": "1.1",
   "dependencies": ["base >= 1.1.0"],
-  "description": "Prevents death by [jerk] trains."
+  "description": "Prevents death by trains and wagons"
 }
