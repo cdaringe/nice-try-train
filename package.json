@@ -1,23 +1,27 @@
 {
   "name": "nice-try-train",
-  "version": "1.5.2",
+  "version": "2.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "chokidar-cli": "^2.1.0",
-    "fs-extra": "11.1.0",
-    "nodemon": "^1.14.12",
-    "npm-run-all": "^4.1.2",
-    "prettier": "2.8.4"
+    "chokidar-cli": "^3.0.0",
+    "fs-extra": "^11.2.0",
+    "node-dev": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^10.9.2",
+    "typed-factorio": "^3.9.0",
+    "typescript": "^5.7.2",
+    "typescript-to-lua": "^1.28.1"
   },
   "scripts": {
+    "build": "tstl",
+    "build:watch": "tstl --watch",
     "deploy:clean": "node scripts/clean.js",
     "deploy:copy": "node scripts/install.js",
-    "deploy": "run-s deploy:clean deploy:copy",
-    "format": "lua-format -i *.lua",
-    "prerelease": "rm -rf build && mkdir build",
-    "rel:bundle": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r thumbnail.png changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
-    "release": "run-s rel:bundle",
-    "watch": "chokidar 'locale/**/*.cfg' '**/*.lua' '**/*.json' -c 'npm run deploy'"
+    "deploy": "run-s build deploy:clean deploy:copy",
+    "watch": "chokidar 'locale/**/*.cfg' '**/*.lua' '**/*.json' -c 'npm run deploy'",
+    "prepackage": "rm -rf build && mkdir build",
+    "package": "VERSION=$(cat info.json | jq -r .version) && RELEASE=nice-try-train_$VERSION && rm -rf $RELEASE && mkdir -p $RELEASE && cp -r changelog.txt *.lua locale info.json $RELEASE && rm -rf build && mkdir -p build && zip -r build/$RELEASE.zip $RELEASE && rm -rf $RELEASE",
+    "release": "run-s build package"
   }
 }

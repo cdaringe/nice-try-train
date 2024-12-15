@@ -1,11 +1,10 @@
 {
   "name": "nice-try-train",
-  "version": "1.5.2",
+  "version": "2.0.0",
   "title": "Nice Try, Train",
   "author": "cdaringe, undermark5",
   "contact": "",
-  "homepage": "",
-  "factorio_version": "1.1",
-  "dependencies": ["base >= 1.1.0"],
+  "homepage": "https://github.com/cdaringe/nice-try-train",
+  "factorio_version": "2.0",
   "description": "Prevents death by trains and wagons"
 }

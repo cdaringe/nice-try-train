@@ -8,7 +8,7 @@ for (const basename of modBasenames) {
   fs.removeSync(`${localModsDirname}/${basename}`);
 }
 
-console.log("remaining mods:");
+console.log(`remaining mods ${localModsDirname}:`);
 console.log(getModBasenames());
 
 console.log("cleaned.");
